@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "name": "api-alunos",
+  "version": "1.0.0",
+  "description": "API usando Node.js e Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R0drigo-Pedroso/Tech-Api.git"
+  },
+  "author": "Rodrigo Pedroso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/R0drigo-Pedroso/Tech-Api/issues"
+  },
+  "homepage": "https://github.com/R0drigo-Pedroso/Tech-Api#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
