@@ -3,19 +3,22 @@ import express from "express";
 const app = express();
 const porta = 3000;
 
+// Esse dois são importante para validar o funcionamento da aplicação
+    // Configurando servidor
+    app.listen(porta, () => {
+        console.log('Servidor express em funcionamento');
+    });
 
-// Configurando servidor
-app.listen(porta, () => {
-    console.log('Servidor express em funcionamento');
-});
+    // Inicio das Configurações GET
+        // criando rodas
+        // primeira rota é para a raiz da aplicação
+        // Rota (endpoint)
+    app.get('/', (req, res) => {
+        res.send(`Insomnia funcionamento prefeitamente`);
+    });
+    // Final das Configurações GET
+// Final - Esse dois são importante para validar o funcionamento da aplicação
 
-// Inicio das Configurações GET
-    // criando rodas
-    // primeira rota é para a raiz da aplicação
-    // Rota (endpoint)
-app.get('/', (req, res) => {
-    res.send(`Vamos juntos aprender sobre API`);
-});
 
 // Rota (endpoint) para exibir todos os alunos
 app.get('/alunos', (req, res) => {
