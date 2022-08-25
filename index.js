@@ -1,7 +1,15 @@
-import express from "express";
+import express, { json } from "express";
+import { ler } from "./src/aluno.js";
 
 const app = express();
 const porta = 3000;
+
+// Configurações suporte a JSON
+app.use(express.json());
+
+// Configurações suporte a dados de inputs de fomulario
+app.get(express.urlencoded({extended: true}));
+
 
 // Esse dois são importante para validar o funcionamento da aplicação
     // Configurando servidor
@@ -22,7 +30,8 @@ const porta = 3000;
 
 // Rota (endpoint) para exibir todos os alunos
 app.get('/alunos', (req, res) => {
-    res.send(`Exibir todos os alunos`);
+    // res.send(`Exibir todos os alunos`);
+    ler(res);
 });
 
 // Rota (endpoint) para exibir apenas um aluno
