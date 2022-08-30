@@ -1,5 +1,5 @@
 import express, { json } from "express";
-import { ler } from "./src/aluno.js";
+import { ler, inserir } from "./src/aluno.js";
 
 const app = express();
 const porta = 3000;
@@ -8,7 +8,7 @@ const porta = 3000;
 app.use(express.json());
 
 // Configurações suporte a dados de inputs de fomulario
-app.get(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));
 
 
 // Esse dois são importante para validar o funcionamento da aplicação
@@ -44,7 +44,9 @@ app.get('/alunos/:id', (req, res) => {
 // Inicio das Configurações dos POST
 // Rota (endpoint) para inserir alunos
 app.post('/alunos', (req, res) => {
-    res.send(`exibir todos`);
+    // res.send(`exibir todos`);
+    const novoAluno = req.body; // Capturando os dados a partir do corpo da requisição
+    inserir(novoAluno, res); // executando a função inserir e passando os parâmentros 
 });
 // Final das Configurações do POST
 
