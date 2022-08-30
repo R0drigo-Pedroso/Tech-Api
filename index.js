@@ -1,5 +1,5 @@
 import express, { json } from "express";
-import { ler, inserir } from "./src/aluno.js";
+import { ler, inserir, lerUm, atualizar } from "./src/aluno.js";
 
 const app = express();
 const porta = 3000;
@@ -36,7 +36,10 @@ app.get('/alunos', (req, res) => {
 
 // Rota (endpoint) para exibir apenas um aluno
 app.get('/alunos/:id', (req, res) => {
-    res.send(`Exibir apenas um aluno`);
+    //res.send(`Exibir apenas um aluno`);
+    // Estou buscando apenas um usuario.
+    const id = parseInt (req.params.id);
+    lerUm(id, res);
 });
 // Final das configurações do GET
 
@@ -54,7 +57,15 @@ app.post('/alunos', (req, res) => {
 // Inicio das Configurações PUT
 // Rotas (endpoint) Atualizar todos alunos
 app.put('/alunos/:id', (req, res) => {
-    res.send(`Atuliazar todos alunos`);
+    //res.send(`Atuliazar todos alunos`);
+
+    // Capturando ID
+    const id = parseInt (req.params.id);
+
+    // dados do aluno
+    const aluno = req.body;
+
+    atualizar(id, aluno, res);
 });
 // Final das Configurações PUT
 

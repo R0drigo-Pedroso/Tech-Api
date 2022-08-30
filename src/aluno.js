@@ -42,4 +42,38 @@ function inserir(aluno, res){
 
 }
 
-export {ler, inserir};
+// Função quer exibe UM aluno
+function lerUm(id, res) {
+    // chamando a função sql para ler apenas um aluno atraves do id
+    const sql = "SELECT * FROM alunos WHERE id = ?";
+
+    conexao.query(sql, id, (erro, resultados) => {
+        if (resultados.length === 0){
+            res.status(204).end();
+            return;
+        } else if(erro) {
+            res.status(400).json(erro.code);
+        }else {
+            res.status(200).json(resultados[0]);
+        }
+    });
+}
+
+// Atualizar alunos
+// Essa função vai receber um ID, os dados do aluno e res.
+function atualizar (id, aluno, res) {
+    const sql = "UPDATE alunos SET ? WHERE id = ?"
+
+    // A ordem dos parametros dentro do [] tem que se igual a do SQL
+    conexao.query(sql, [aluno,id], (erro, resultados) => {
+        if(erro){
+            res.status(400).json(erro.code);
+        }else{
+            // res.status(200).json({"status":"atualizar com Sucesso!"})
+            
+            res.status(200).json({...aluno, id}); // spread operator (operador de "espalhamento" de objetos)
+        }    
+    }); 
+}
+
+export {ler, inserir, lerUm, atualizar};
