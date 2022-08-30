@@ -4,7 +4,7 @@ import { ler } from "./src/aluno.js";
 const app = express();
 const porta = 3000;
 
-// Configurações suporte a JSON
+// Configurações suporte ao formato JSON
 app.use(express.json());
 
 // Configurações suporte a dados de inputs de fomulario
