@@ -1,0 +1,27 @@
+nome do BD: escolinha
+Usuario: adminrodrigo
+senha: 147258369
+
+
+
+Banco de Dados Aspecto web
+
+Endereço:
+ns204.hostgator.com.br
+ns205.hostgator.com.br
+
+Nome do BD
+aspect86_escola01
+
+Usuario
+aspect86_esc01
+
+senha:
+W?yPWm21kKGN
+
+endereço da aplicação:
+api-escolinha
+
+
+link api
+https://api-escolinha.herokuapp.com/
