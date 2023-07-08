@@ -1,6 +1,6 @@
 import conexao from './banco.js'
 
-// função quer fazez a leitura do banco de dado
+// função que faz a leitura do banco de dado
 function ler (res) {
 
     // Criando CRUD
